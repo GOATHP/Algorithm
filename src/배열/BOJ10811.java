@@ -11,32 +11,37 @@ public class BOJ10811 {
 
         StringTokenizer st = new StringTokenizer(br.readLine());
 
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        StringBuilder sb = new StringBuilder();
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
         int[] arr = new int[n];
 
-        for (int i=1; i <= n; i++) {
-            arr[i-1] = i;
+        for (int i = 1; i <= n; i++) {
+            arr[i - 1] = i;
         }
 
-        while (m > 0) {
+        for (int k = 0; k < m; k++) {
             StringTokenizer st2 = new StringTokenizer(br.readLine());
-            int i = Integer.parseInt(st2.nextToken());
-            int j = Integer.parseInt(st2.nextToken());
+            int i = Integer.parseInt(st2.nextToken()) - 1;
+            int j = Integer.parseInt(st2.nextToken()) - 1;
 
-            for (int k=i; k<=j ; k++) {
+            while (i < j) {
                 int temp = arr[i];
-                arr[k] = arr[j];
+                arr[i] = arr[j];
                 arr[j] = temp;
-                if (j > k) {
-                    j--;
-                } else {
-                    return;
-                }
-            }
-            m--;
-        }
-        System.out.println(Arrays.toString(arr));
+                i++;
+                j--;
 
+            }
+        }
+
+        for (int i = 1; i <= n; i++) {
+            sb.append(arr[i - 1]+ " ");
+        }
+        bw.write(sb.toString());
+        bw.flush();
+        bw.close();
     }
 }
