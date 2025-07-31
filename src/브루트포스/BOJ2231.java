@@ -12,11 +12,11 @@ public class BOJ2231 {
 
         int answer = Integer.parseInt(n);
 
-
-        System.out.println(216/100);
-        n- (216/100)
-        System.out.println(n/10);
-        System.out.println(n/1);
+//
+//        System.out.println(216/100);
+//        n- (216/100)
+//        System.out.println(n/10);
+//        System.out.println(n/1);
 
 
 
