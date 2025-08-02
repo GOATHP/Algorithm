@@ -10,15 +10,38 @@ public class BOJ2231 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String n = br.readLine();
 
-        int answer = Integer.parseInt(n);
+        int target = Integer.parseInt(n);
+        int answer = 0;
 
+        int partSum = 0;
+        int min = Integer.MAX_VALUE;
+        while (target <= 0) {
 
-        System.out.println(216/100);
-        n- (216/100)
-        System.out.println(n/10);
-        System.out.println(n/1);
+        int power = n.length();
+        int remain = target;
 
+            for (int i = power - 1; i >= 0; i--) {
+                int div = (int) Math.pow(10,i);
+//                System.out.println( remain );
+                partSum +=  ( remain / div );
+                System.out.println(partSum);
+                remain -= (remain / div) * div;
+            }
 
+            if (remain + partSum == target && min > remain + partSum) {
+                min = remain;
+                target--;
+            } else if (remain + partSum < target){
+                System.out.println(remain);
+                break;
+
+            } else {
+                target--;
+            }
+
+            System.out.println(remain);
+
+        }
 
     }
 
