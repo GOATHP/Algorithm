@@ -13,36 +13,21 @@ public class BOJ2231 {
         int target = Integer.parseInt(n);
         int answer = 0;
 
-        int partSum = 0;
-        int min = Integer.MAX_VALUE;
-        while (target <= 0) {
+        for (int i = 1; i <= target; i++) {
+            int sum = i;
+            int temp = i;
 
-        int power = n.length();
-        int remain = target;
-
-            for (int i = power - 1; i >= 0; i--) {
-                int div = (int) Math.pow(10,i);
-//                System.out.println( remain );
-                partSum +=  ( remain / div );
-                System.out.println(partSum);
-                remain -= (remain / div) * div;
+            while (temp > 0) {
+                sum += temp % 10;
+                temp /= 10;
             }
 
-            if (remain + partSum == target && min > remain + partSum) {
-                min = remain;
-                target--;
-            } else if (remain + partSum < target){
-                System.out.println(remain);
+            if (sum == target) {
+                answer = i;
                 break;
-
-            } else {
-                target--;
             }
-
-            System.out.println(remain);
-
         }
 
+        System.out.println(answer);
     }
-
 }
