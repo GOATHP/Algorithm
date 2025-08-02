@@ -12,20 +12,17 @@ public class BOJ11478 {
 
         HashSet<String> set = new HashSet<>();
 
-        set.add(text);
-
-        for(int i=0;i<text.length()-1;i++) {
-            for(int j=i+1;j<text.length();j++) {
-                System.out.println("i ====>" +i);
-                System.out.println("j ====>" +j);
-//                System.out.println("String I" + text.charAt(i));
-                System.out.print( String.valueOf(text.charAt(i))  + String.valueOf(text.charAt(j)) );
+        int window = 1;
+        while (window <= text.length()) {
+            for (int i=0; i<text.length(); i++) {
+                if (i+window > text.length()) {break;}
+//                System.out.println(text.substring(i, i+window));
+                set.add(text.substring(i, i+window));
             }
+            window++;
         }
-//
-//        for (int i = 0; i<set.toArray().length;i++) {
-//            System.out.println(set);
-//        }
+
+        System.out.println(set.size());
 
     }
 }
