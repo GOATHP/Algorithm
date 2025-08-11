@@ -24,9 +24,9 @@ public class BOJ11866 {
         while (!queue.isEmpty()) {
             if (queue.size() >= idx) {
                 if ( queue.size() == n ) {
-                    sb.append("<"+queue.get(idx)+",");
+                    sb.append("<"+queue.get(idx)+", ");
                 } else {
-                    sb.append(queue.get(idx)+",");
+                    sb.append(queue.get(idx)+", ");
                 }
                 queue.remove(idx);
                 idx += tempIdx;
@@ -35,12 +35,12 @@ public class BOJ11866 {
                     if (queue.size() == 1) {
                         sb.append(queue.poll()+">");
                     } else {
-                        sb.append(queue.poll()+",");
+                        sb.append(queue.poll()+", ");
                     }
                 } else {
                     idx = Math.abs(idx) - queue.size();
                     queue.get(idx);
-                    sb.append(queue.get(idx)+",");
+                    sb.append(queue.get(idx)+", ");
                     queue.remove(idx);
                     idx += tempIdx;
                 }

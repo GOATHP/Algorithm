@@ -17,36 +17,36 @@ public class BOJ25206 {
             st.nextToken();
             degre[i] = Double.parseDouble(st.nextToken());
             grade[i] = st.nextToken();
-            System.out.println( degre[i] + "/" + grade[i] + "/");
         }
 
         for (int i = 0; i < 20; i++) {
 
-            if (grade[i] != "P") {
+            if (grade[i].equals("P")) continue;
+
                 sumDiv += degre[i];
-            }
-            if (grade[i] == "A+") {
+            if (grade[i].equals( "A+") ) {
                 sumDegre += 4.5 * degre[i];
-            } else if (grade[i] == "A0") {
+            } else if (grade[i].equals("A0")) {
                 sumDegre += 4.0 * degre[i];
-            } else if (grade[i] == "B+") {
+            } else if (grade[i].equals("B+")) {
                 sumDegre += 3.5 * degre[i];
-            } else if (grade[i] == "B0") {
+            } else if (grade[i].equals("B0")) {
                 sumDegre += 3.0 * degre[i];
-            } else if (grade[i] == "C+") {
+            } else if (grade[i].equals( "C+")) {
                 sumDegre += 2.5 * degre[i];
-            } else if (grade[i] == "C0") {
+            } else if (grade[i].equals("C0")) {
                 sumDegre += 2.0 * degre[i];
-            }  else if (grade[i] == "D+") {
+            }  else if (grade[i].equals("D+")) {
                 sumDegre += 1.5 * degre[i];
-            } else if (grade[i] == "F") {
+            } else if (grade[i].equals("D0")) {
+                sumDegre += 1.0 * degre[i];
+            } else if (grade[i].equals("F")) {
                 sumDegre += 0.0 * degre[i];
             }
 
 
         }
-        System.out.println(sumDegre  + "/ " + sumDiv);
 
-        System.out.println(sumDegre / sumDiv);
+        System.out.printf("%.6f", sumDegre / sumDiv);
     }
 }
