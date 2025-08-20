@@ -18,21 +18,16 @@ public class BOJ2745 {
         toDemical(n, b);
     }
 
-    public static double toDemical(String n, int b) {
+    public static void toDemical(String n, int b) {
+        long answer = 1;
 
-        char[] arr = n.toCharArray();
-
-        for(int i=0; i<arr.length;i++) {
-            if (arr[i] - 'A' >= 0) {
-                System.out.println(arr[i] - 'A' + 10);
-
-            }
-            else if (arr[i] - '0' >= 0) {
-                System.out.println(arr[i] - '0');
+        for (int i = n.length() - 1; i>=0; i--) {
+            if ( (n.charAt(i) - '0') < 10 ) {
+                answer *= Integer.parseInt(n);
+            } else {
+                answer *= ( n.charAt(i) - 'A' + 11);
             }
         }
-
-        return 0;
+        System.out.println(answer);
     }
-
 }
