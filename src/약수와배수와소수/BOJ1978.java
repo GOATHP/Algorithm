@@ -18,7 +18,7 @@ public class BOJ1978 {
         for (int i=0; i<n; i++) {
             isPrime = 0;
             int m = Integer.parseInt(st.nextToken());
-            for (int j=2; j<m/2; j++) {
+            for (int j=2; j<m; j++) {
                 if (m % j == 0) {
                     break;
                 } else {
