@@ -23,6 +23,7 @@ public class 일이될때까지 {
                 n--;
                 cnt++;
             }
+
         }
         System.out.println(cnt);
     }
