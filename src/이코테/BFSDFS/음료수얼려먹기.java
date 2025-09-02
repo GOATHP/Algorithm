@@ -1,4 +1,4 @@
-package 이코테.구현;
+package 이코테.BFSDFS;
 
 import java.util.*;
 import java.io.*;
