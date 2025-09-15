@@ -10,16 +10,16 @@ public class 상하좌우 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
+        int[][] matrix = new int[n][n];
 
-        int[][] matirx = new int[5][5];
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
         int[] x = {-1, 1, 0, 0};
         int[] y = {0, 0, -1, 1};
         // L - 0
         // R - 1
         // D - 2
         // U - 3
-
-        StringTokenizer st = new StringTokenizer(br.readLine());
 
         int cx = 1;
         int cy = 1;

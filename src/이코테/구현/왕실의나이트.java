@@ -13,16 +13,11 @@ public class 왕실의나이트 {
 
         int cx = st.charAt(0) - 'a' + 1;
         int cy = st.charAt(1) - '0';
-
-
-        System.out.println(cx + " " + cy);
-
         int[] x = {2, 2, -2, -2, 1, -1, 1, -1};
         int[] y = {1, -1, 1, -1, 2, 2, -2, -2};
-
         int cnt = 0;
 
-        for (int i=0; i<8; i++) {
+        for (int i=0; i<8;i++) {
             int nx = cx + x[i];
             int ny = cy + y[i];
 
@@ -30,7 +25,6 @@ public class 왕실의나이트 {
                 cnt++;
             }
         }
-
         System.out.println(cnt);
     }
 }
