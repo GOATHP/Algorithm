@@ -13,10 +13,7 @@ public class 바닥공사 {
         int[] sqr = {2, n};
         int[] dp = new int[100];
 
-//        public static int solve(int[] sqr) {
-//
-//
-//        }
+
 
     }
 
